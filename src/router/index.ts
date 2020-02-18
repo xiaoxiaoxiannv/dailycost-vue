@@ -13,7 +13,7 @@ const routes = [
         redirect: '/money'
     },
     {
-        path: 'money',
+        path: '/money',
         component: Money
     },
     {
@@ -21,7 +21,7 @@ const routes = [
         component: Labels
     },
     {
-        path: './statistics',
+        path: '/statistics',
         component: Statistics
     }
 ];
