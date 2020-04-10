@@ -9,7 +9,10 @@
             </router-link>
         </div>
         <div class="createTag-wrapper">
-            <button class="createTag" @click="createTag">新建标签</button>
+            <Button class="createTag"
+                    @click="createTag">
+                新建标签
+            </Button>
         </div>
     </Layout>
 </template>
@@ -40,7 +43,7 @@
 
 <style lang="scss" scoped>
     .tags {
-        background: white;
+        background: rgb(217,224,235);
         font-size: 16px;
         padding-left: 16px;
 
@@ -49,7 +52,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #e6e6e6;
+            border-bottom: 2px solid #e9e9e9;
 
             svg {
                 color: #333;
