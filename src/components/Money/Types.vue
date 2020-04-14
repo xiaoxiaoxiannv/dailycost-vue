@@ -23,7 +23,8 @@
       if (type !== '-' && type !== '+') {
         throw new Error('type is unknown');
       }
-      this.$emit('update:value,type');
+      console.log(type);
+      this.$emit('update:value',type);
     }
   }
 </script>
