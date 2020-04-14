@@ -18,17 +18,15 @@
   import {mixins} from 'vue-class-component';
   import TagHelper from '@/mixins/TagHelper';
 
-  @Component({
-    computed:{
-      tagList(){
-         return this.$store.state.tagList;
-      }
-    }
-  })
+  @Component
   export default class Tags extends mixins(TagHelper) {
     selectedTags: string[] = [];
 
-    toggle(tag: string) {
+    get tagList(){
+      return this.$store.state.tagList;
+    }
+
+  toggle(tag: string) {
       const index = this.selectedTags.indexOf(tag);
       if (index >= 0) {
         this.selectedTags.splice(index, 1);
