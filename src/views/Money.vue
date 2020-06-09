@@ -8,7 +8,7 @@
                       placeholder="在这里输入备注"
                       @update:value="onUpdateNotes"/>
         </div>
-        <Tags/>
+        <Tags @update:value="record.tags = $event"/>
     </Layout>
 </template>
 
@@ -22,7 +22,7 @@
   import recordTypeList from '@/constants/recordTypeList';
 
   @Component({
-    components: {Tabs,Tags, FormItem, NumberPad},
+    components: {Tabs, Tags, FormItem, NumberPad},
   })
   export default class Money extends Vue {
     get recordList() {
@@ -45,6 +45,9 @@
 
     saveRecord() {
       this.$store.commit('createRecord', this.record);
+      if (this.$store.state.createRecordError === null) {
+        window.alert('已保存');
+      }
     }
   }
 </script>

@@ -42,7 +42,7 @@
             }
         }
         > .item.selected{
-            color: $color-highlight;
+            color: rgb(45,95,170);
         }
     }
 </style>
