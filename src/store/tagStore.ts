@@ -1,4 +1,5 @@
 import createId from '@/lib/createId';
+import store from '@/store/index';
 
 const localStorageKeyName = 'tagList';
 
@@ -6,7 +7,12 @@ const tagStore = {
   tagList: [] as Tag[],
   fetchTags() {
     this.tagList = JSON.parse(window.localStorage.getItem(localStorageKeyName) || '[]');
-    return this.tagList;
+    if(!this.tagList || this.tagList.length === 0){
+      store.commit('createTag','衣');
+      store.commit('createTag','食');
+      store.commit('createTag','住');
+      store.commit('createTag','行');
+    }
   },
   findTag(id: string) {
     return this.tagList.filter(t => t.id === id)[0];
